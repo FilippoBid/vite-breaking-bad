@@ -1,9 +1,12 @@
 <script>
-import { store,getAnotherPage } from "../store";
+import { store} from "../store";
+import ThePagination from "./ThePagination.vue";
 export default {
+    components: { ThePagination },
     data() {
         return {
             store,
+            gender: ""
 
         }
     }
@@ -12,14 +15,13 @@ export default {
 
 
 <template>
-    <div class="h-25 p-5">
-        <div class="d-flex me-auto flex-column gap-4 align-items-center w-25">
-            <button @click="getAnotherPage()" class="btn rounded-5 btn-light">next page</button>
-            <button  class="btn rounded-5 btn-light">prev page</button>
-
-        </div>
-
-    </div>
+    <ThePagination></ThePagination>
+    <select class="form-select" aria-label="Default select example" v-model="this.gender" placeholder="FILTRA PER GENDER">
+        <option selected disabled="true">FILTRA PER GENDER</option>
+        <option value="1">MALE</option>
+        <option value="2">FEMALE</option>
+        <option value="3">UNKNOW</option>
+      </select>
 </template>
 
 

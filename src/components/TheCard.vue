@@ -11,7 +11,7 @@ export default {
 </script>
 
 
-<template>
+<template> <!-- //creo il layout della singola card contenente le informazioni prese  -->
 
     <div class="col" v-for="(personaggio,index) in store.characterList" :key="index">
         <div class="card">
@@ -20,7 +20,7 @@ export default {
                 <h4 class="card-title">{{personaggio.name}}</h4>
                 <p class="card-text">razza : {{personaggio.species}}</p>
                 <p class="card-text">stato : {{personaggio.status}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">go top</a>
             </div>
         </div>
 

@@ -1,8 +1,8 @@
 <script>
-import { store, getExternalData } from "./store";
+import { store, getExternalData} from "./store";
 import TheCardContainer from "./components/TheCardContainer.vue";
 import TheNavbar from "./components/TheNavbar.vue";
-import { onMounted } from "vue";
+
 
 export default {
 
@@ -17,6 +17,7 @@ export default {
 
   },
   mounted() {
+    
     getExternalData();
 
   }
