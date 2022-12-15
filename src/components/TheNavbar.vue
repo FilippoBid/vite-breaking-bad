@@ -1,5 +1,6 @@
 <script>
 import { store} from "../store";
+import axios from 'axios';
 import ThePagination from "./ThePagination.vue";
 export default {
     components: { ThePagination },
@@ -9,18 +10,34 @@ export default {
             gender: ""
 
         }
-    }
+    },
+    methods:{
+        chiamataFiltroGender(){
+            axios.get("https://rickandmortyapi.com/api/character/?gender="+ this.gender)
+        .then((resp) => {
+            store.characterList = resp.data.results;
+            
+
+        })
+            
+
+
+
+        },
+
+    
+   }
 }
 </script>
 
 
 <template>
     <ThePagination></ThePagination>
-    <select class="form-select" aria-label="Default select example" v-model="this.gender" placeholder="FILTRA PER GENDER">
+    <select @change="chiamataFiltroGender()" class="form-select" aria-label="Default select example" v-model="this.gender" >
         <option selected disabled="true">FILTRA PER GENDER</option>
-        <option value="1">MALE</option>
-        <option value="2">FEMALE</option>
-        <option value="3">UNKNOW</option>
+        <option value="male">MALE</option>
+        <option value="female">FEMALE</option>
+        <option value="unknow">UNKNOW</option>
       </select>
 </template>
 

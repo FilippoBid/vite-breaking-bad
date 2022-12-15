@@ -6,7 +6,8 @@ export default {
             store,
 
         }
-    }
+    },
+    
 }
 </script>
 

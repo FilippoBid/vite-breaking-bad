@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import axios, { Axios } from 'axios';
+import axios from 'axios';
 export const store = reactive({
     characterList: [],
     pageNumber: 1 ,
